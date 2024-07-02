@@ -1,27 +1,23 @@
-import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { supabase } from "../client";
 import CreatorCard from "../components/CreatorCard";
 
+export async function loader() {
+	const { data } = await supabase.from("creators").select();
+	return data;
+}
+
 export default function ShowCreators() {
-	const [creators, setCreators] = useState([]);
-
-	useEffect(() => {
-		getCreators();
-	}, []);
-
-	async function getCreators() {
-		const { data } = await supabase.from("creators").select();
-		setCreators(data);
-	}
+	const creators = useLoaderData();
 
 	return (
 		<>
-			{creators.length === 0 ? (
-				<div>empty</div>
-			) : (
+			{creators.length ? (
 				creators.map((creator) => {
 					return <CreatorCard key={creator.id} {...creator} />;
 				})
+			) : (
+				<div>empty</div>
 			)}
 		</>
 	);
