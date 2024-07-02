@@ -7,7 +7,9 @@ import Root from "./routes/root";
 import ShowCreators, {
 	loader as showCreatorsLoader,
 } from "./routes/show-creators";
-import ViewCreator from "./routes/view-creator";
+import ViewCreator, {
+	loader as viewCreatorLoader,
+} from "./routes/view-creator";
 
 const router = createBrowserRouter([
 	{
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
 			{
 				path: ":creatorID",
 				element: <ViewCreator />,
+				loader: viewCreatorLoader,
 			},
 			{
 				path: "edit/:creatorID",
