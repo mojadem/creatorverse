@@ -1,3 +1,3 @@
 export default function EditCreator() {
-  return <div>EditCreator</div>;
+	return <div>EditCreator</div>;
 }
