@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AddCreator from "./routes/add-creator";
+import AddCreator, { action as addCreatorAction } from "./routes/add-creator";
 import EditCreator from "./routes/edit-creator";
 import Root from "./routes/root";
 import ShowCreators, {
@@ -24,6 +24,7 @@ const router = createBrowserRouter([
 			{
 				path: "add",
 				element: <AddCreator />,
+				action: addCreatorAction,
 			},
 			{
 				path: ":creatorID",
