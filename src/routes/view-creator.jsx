@@ -8,11 +8,11 @@ export async function loader({ params }) {
 		.select()
 		.eq("id", params.creatorID);
 
-	return data[0];
+	return data;
 }
 
 export default function ViewCreator() {
-	const creator = useLoaderData();
+	const [creator] = useLoaderData();
 
 	return (
 		<>

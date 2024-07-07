@@ -2,7 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AddCreator, { action as addCreatorAction } from "./routes/add-creator";
-import EditCreator from "./routes/edit-creator";
+import EditCreator, {
+	action as editCreatorAction,
+	loader as editCreatorLoader,
+} from "./routes/edit-creator";
 import Root from "./routes/root";
 import ShowCreators, {
 	loader as showCreatorsLoader,
@@ -34,6 +37,8 @@ const router = createBrowserRouter([
 			{
 				path: "edit/:creatorID",
 				element: <EditCreator />,
+				action: editCreatorAction,
+				loader: editCreatorLoader,
 			},
 		],
 	},
