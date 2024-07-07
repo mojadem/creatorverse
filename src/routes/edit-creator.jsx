@@ -14,12 +14,21 @@ export async function loader({ params }) {
 
 export async function action({ request, params }) {
 	const formData = await request.formData();
-	const updatedCreator = Object.fromEntries(formData);
+	const intent = formData.get("intent");
 
-	await supabase
-		.from("creators")
-		.update(updatedCreator)
-		.eq("id", params.creatorID);
+	if (intent === "update") {
+		// filter out intent field
+		const { intent: _, ...updatedCreator } = Object.fromEntries(formData);
+
+		await supabase
+			.from("creators")
+			.update(updatedCreator)
+			.eq("id", params.creatorID);
+	}
+
+	if (intent === "delete") {
+		await supabase.from("creators").delete().eq("id", params.creatorID);
+	}
 
 	return redirect("/");
 }
@@ -49,7 +58,12 @@ export default function EditCreator() {
 				<span>Image URL</span>
 				<input type="text" name="imageURL" defaultValue={creator.imageURL} />
 			</label>
-			<button type="submit">Submit</button>
+			<button type="submit" name="intent" value="update">
+				Submit
+			</button>
+			<button type="submit" name="intent" value="delete">
+				Delete
+			</button>
 		</Form>
 	);
 }
