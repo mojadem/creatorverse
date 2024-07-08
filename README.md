@@ -1,4 +1,4 @@
-# WEB103 Prework - *👉🏿 Name of App Here*
+# WEB103 Prework - _👉🏿 Name of App Here_
 
 Submitted by: **👉🏿 your name here**
 
@@ -11,6 +11,7 @@ Time spent: **👉🏿 X** hours
 The following **required** functionality is completed:
 
 <!-- 👉🏿👉🏿👉🏿 Make sure to check off completed functionality below -->
+
 - [ ] **A logical component structure in React is used to create the frontend of the app**
 - [ ] **At least five content creators are displayed on the homepage of the app**
 - [ ] **Each content creator item includes their name, a link to their channel/page, and a short description of their content**
@@ -29,7 +30,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
@@ -38,7 +39,9 @@ Here's a walkthrough of implemented required features:
 👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
+
+GIF created with ... 👉🏿 GIF tool here
+
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -57,4 +60,3 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 > http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-
