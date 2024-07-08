@@ -17,7 +17,7 @@ export default function ShowCreators() {
           return <CreatorCard key={creator.id} {...creator} />;
         })
       ) : (
-        <div>empty</div>
+        <p>No creators yet!</p>
       )}
     </>
   );
